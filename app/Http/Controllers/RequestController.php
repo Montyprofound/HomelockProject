@@ -28,7 +28,9 @@ class RequestController extends Controller
             'company_name' => 'nullable|string|max:255',
             'service_type' => 'required|in:security,cleaning,fire_extinguisher,contact',
             'message' => 'required|string|max:1000',
-            'product_interest' => 'nullable|string|max:255'
+            'product_interest' => 'nullable|string|max:255',
+            'security_type' => 'nullable|in:manned_guards,dog_guards,patrol_services,alarm_backup,multiple',
+            'service_interest' => 'nullable|in:security,cleaning,fire_extinguisher,multiple,other'
         ]);
 
         // Sanitize input
