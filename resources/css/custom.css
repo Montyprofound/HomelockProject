@@ -1,217 +1,230 @@
-/* Custom CSS Variables for Consistent Branding */
-:root {
-  --primary-color: #0d6efd;
-  --secondary-color: #6c757d;
-  --success-color: #198754;
-  --danger-color: #dc3545;
-  --dark-color: #212529;
-  --light-color: #f8f9fa;
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --border-radius: 8px;
-  --box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  --transition: all 0.3s ease;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Template</title>
+  <style>
+    :root {
+      --font-family: "Poppins", Arial, sans-serif;
+      --text-color: #222;
+      --bg-color: #f8f9fa;
+      --primary-color: #3b82f6;
+      --nav-height: 70px;
+    }
 
-/* Typography */
-body {
-  font-family: var(--font-family);
-  line-height: 1.6;
-}
+    /* Global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* Enhanced Cards */
-.card {
-  border: none;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  transition: var(--transition);
-}
+    body {
+      font-family: var(--font-family);
+      line-height: 1.6;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      -webkit-font-smoothing: antialiased;
+    }
 
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* Button Enhancements */
-.btn {
-  border-radius: var(--border-radius);
-  font-weight: 500;
-  transition: var(--transition);
-  border: none;
-}
+    /* NAVIGATION BAR */
+    nav {
+      width: 100%;
+      height: var(--nav-height);
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+    }
 
-.btn:hover {
-  transform: translateY(-1px);
-}
+    nav .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
 
-/* Sticky Navigation */
-.navbar {
-  transition: var(--transition);
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
 
-.navbar.scrolled {
-  background-color: rgba(33, 37, 41, 0.95) !important;
-  backdrop-filter: blur(10px);
-}
+    nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      transition: 0.3s;
+    }
 
-/* Loading States */
-.btn-loading {
-  position: relative;
-  pointer-events: none;
-}
+    nav a:hover {
+      color: var(--primary-color);
+    }
 
-.btn-loading::after {
-  content: '';
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  margin: auto;
-  border: 2px solid transparent;
-  border-top-color: #ffffff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
+    /* Mobile Menu */
+    .menu-btn {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: var(--nav-height);
+        right: 0;
+        background: #fff;
+        width: 200px;
+        height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0;
+        transition: 0.4s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
 
-/* Form Enhancements */
-.form-control {
-  border-radius: var(--border-radius);
-  border: 1px solid #dee2e6;
-  transition: var(--transition);
-}
+      nav ul.open {
+        height: 180px;
+        padding: 20px;
+      }
 
-.form-control:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
-}
+      .menu-btn {
+        display: block;
+      }
+    }
 
-/* Hero Section */
-.hero-section {
-  background: linear-gradient(135deg, #0f4c75 0%, #3282b8 50%, #bbe1fa 100%);
-  position: relative;
-  overflow: hidden;
-}
+    /* HERO SECTION */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
 
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
-  opacity: 0.3;
-}
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
 
-/* Stats Section */
-.stats-item {
-  text-align: center;
-  padding: 2rem 1rem;
-}
+    .hero p {
+      margin: 20px 0;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-.stats-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #0f4c75;
-  display: block;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+    .hero button {
+      padding: 12px 22px;
+      font-size: 1rem;
+      background: var(--primary-color);
+      border: none;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-/* Trust Indicators */
-.trust-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  background: rgba(13, 110, 253, 0.1);
-  border-radius: var(--border-radius);
-  margin: 0.25rem;
-  font-size: 0.875rem;
-  color: var(--primary-color);
-}
+    .hero button:hover {
+      background: #2563eb;
+    }
 
-/* Mobile Optimizations */
-@media (max-width: 768px) {
-  .display-4 {
-    font-size: 2rem;
-  }
-  
-  .display-5 {
-    font-size: 1.75rem;
-  }
-  
-  .btn-lg {
-    padding: 0.75rem 1.5rem;
-  }
-}
+    /* CONTENT SECTION */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 80px auto;
+    }
 
-/* Accessibility */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
+    .section {
+      margin: 60px 0;
+      text-align: center;
+    }
 
-/* Focus indicators */
-.btn:focus,
-.form-control:focus,
-.nav-link:focus {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 2px;
-}
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
 
-/* Product Cards */
-.product-card {
-  transition: var(--transition);
-  border: 1px solid #e9ecef;
-}
+    .section p {
+      max-width: 700px;
+      margin: auto;
+    }
 
-.product-card:hover {
-  border-color: var(--primary-color);
-  transform: translateY(-3px);
-}
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 25px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
 
-.product-icon {
-  transition: var(--transition);
-}
+  <nav>
+    <div class="logo">MyBrand</div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <ul id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-.product-card:hover .product-icon {
-  transform: scale(1.1);
-}
+  <section class="hero" id="home">
+    <div>
+      <h1>Welcome to Our Responsive Template</h1>
+      <p>Beautiful, clean and lightweight design. Fully responsive and perfect for any modern project you want to build.</p>
+      <button>Get Started</button>
+    </div>
+  </section>
 
-/* Alert Enhancements */
-.alert {
-  border: none;
-  border-radius: var(--border-radius);
-}
+  <div class="container">
+    <div class="section" id="about">
+      <h2>About Us</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe eum veniam velit ad iste quos exercitationem asperiores.</p>
+    </div>
 
-.alert-success {
-  background-color: rgba(25, 135, 84, 0.1);
-  color: var(--success-color);
-}
+    <div class="section" id="services">
+      <h2>Our Services</h2>
+      <p>We offer high-quality, scalable and visually appealing designs for both small and large projects.</p>
+    </div>
 
-/* Modal Enhancements */
-.modal-content {
-  border: none;
-  border-radius: var(--border-radius);
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-}
+    <div class="section" id="contact">
+      <h2>Contact Us</h2>
+      <p>Reach out for collaborations, business inquiries or support. We're happy to connect!</p>
+    </div>
+  </div>
 
-.modal-header {
-  border-bottom: 1px solid #e9ecef;
-  background-color: var(--light-color);
-}
+  <footer>
+    © 2025 MyBrand — All Rights Reserved
+  </footer>
 
-/* Form Check Enhancements */
-.form-check-input:checked {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-}
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
