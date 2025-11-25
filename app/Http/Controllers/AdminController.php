@@ -29,11 +29,6 @@ class AdminController extends Controller
 
     public function showRequest($id)
     {
-        // Only allow authenticated admin users
-        if (!Auth::check()) {
-            abort(403);
-        }
-        
         $request = Request::findOrFail($id);
         return view('admin.request-details', compact('request'));
     }
