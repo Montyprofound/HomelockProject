@@ -22,7 +22,7 @@ A Laravel-based website for a company providing Security Guards, Cleaning Servic
 
 - **Backend**: Laravel (latest stable version)
 - **Frontend**: Bootstrap 5 + Blade templates
-- **Database**: SQLite (configurable)
+- **Database**: MySQL (configurable)
 - **Authentication**: Laravel's built-in authentication
 
 ## Installation & Setup
