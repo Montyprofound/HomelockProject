@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Request;
 use Illuminate\Http\Request as HttpRequest;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NewRequestNotification;
 
 class AppController extends Controller
 {
@@ -52,7 +54,10 @@ class AppController extends Controller
             'product_interest' => 'nullable|string|max:255'
         ]);
 
-        Request::create($validated);
+        $newRequest = Request::create($validated);
+
+        // Send email notification to admin
+        Mail::to(env('ADMIN_EMAIL'))->send(new NewRequestNotification($newRequest));
 
         return back()->with('success', 'Your request has been submitted successfully! We will contact you soon.');
     }
