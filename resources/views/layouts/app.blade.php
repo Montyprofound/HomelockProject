@@ -72,9 +72,9 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <h6>Contact Info</h6>
-                    <p class="mb-1"><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
-                    <p class="mb-1"><i class="fas fa-envelope me-2"></i>info@homelockservices.com</p>
-                    <p class="mb-3"><i class="fas fa-map-marker-alt me-2"></i>123 Business St, City, State</p>
+                    <p class="mb-1"><i class="fas fa-phone me-2"></i>0724785005</p>
+                    <p class="mb-1"><i class="fas fa-envelope me-2"></i>ssyengo1@gmail.com</p>
+                    <p class="mb-3"><i class="fas fa-map-marker-alt me-2"></i>Muthaiga, Kiambu</p>
                 </div>
             </div>
             <hr class="my-4">
