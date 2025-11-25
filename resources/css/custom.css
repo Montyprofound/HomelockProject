@@ -90,7 +90,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #5c6bc0 100%);
+  background: linear-gradient(135deg, #0f4c75 0%, #3282b8 50%, #bbe1fa 100%);
   position: relative;
   overflow: hidden;
 }
@@ -115,7 +115,7 @@ body {
 .stats-number {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1a237e;
+  color: #0f4c75;
   display: block;
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }

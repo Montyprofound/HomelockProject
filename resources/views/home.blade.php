@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="hero-section text-white py-5" style="background: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #5c6bc0 100%); position: relative; overflow: hidden;">
+<section class="hero-section text-white py-5" style="background: linear-gradient(135deg, #0f4c75 0%, #3282b8 50%, #bbe1fa 100%); position: relative; overflow: hidden;">
 
     <div class="container py-5 position-relative">
         <div class="row align-items-center">
@@ -40,25 +40,25 @@
         <div class="row text-center">
             <div class="col-md-3 col-6 mb-3">
                 <div class="stats-item">
-                    <span class="stats-number" style="color: #1a237e;">500+</span>
+                    <span class="stats-number" style="color: #0f4c75;">500+</span>
                     <small class="text-muted fw-medium">Properties Protected</small>
                 </div>
             </div>
             <div class="col-md-3 col-6 mb-3">
                 <div class="stats-item">
-                    <span class="stats-number" style="color: #1a237e;">24/7</span>
+                    <span class="stats-number" style="color: #0f4c75;">24/7</span>
                     <small class="text-muted fw-medium">Response Time</small>
                 </div>
             </div>
             <div class="col-md-3 col-6 mb-3">
                 <div class="stats-item">
-                    <span class="stats-number" style="color: #1a237e;">10+</span>
+                    <span class="stats-number" style="color: #0f4c75;">10+</span>
                     <small class="text-muted fw-medium">Years Experience</small>
                 </div>
             </div>
             <div class="col-md-3 col-6 mb-3">
                 <div class="stats-item">
-                    <span class="stats-number" style="color: #1a237e;">100%</span>
+                    <span class="stats-number" style="color: #0f4c75;">100%</span>
                     <small class="text-muted fw-medium">Client Satisfaction</small>
                 </div>
             </div>
@@ -171,7 +171,7 @@
 </section>
 
 <!-- Contact CTA -->
-<section class="py-5" style="background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%); position: relative;">
+<section class="py-5" style="background: linear-gradient(135deg, #0f4c75 0%, #3282b8 100%); position: relative;">
 
     <div class="container text-center position-relative text-white">
         <h3 class="mb-3 fw-bold">Ready to Get Started?</h3>

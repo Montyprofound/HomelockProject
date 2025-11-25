@@ -13,7 +13,8 @@ class Request extends Model
         'company_name',
         'service_type',
         'message',
-        'product_interest'
+        'product_interest',
+        'status'
     ];
     
     protected $guarded = ['id', 'created_at', 'updated_at'];
@@ -27,6 +28,30 @@ class Request extends Model
             'fire_extinguisher' => 'Fire Extinguisher',
             'contact' => 'General Contact',
             default => ucfirst($this->service_type)
+        };
+    }
+
+    // Get status display name
+    public function getStatusDisplayAttribute()
+    {
+        return match($this->status) {
+            'pending' => 'Pending',
+            'in_progress' => 'In Progress',
+            'completed' => 'Completed',
+            'cancelled' => 'Cancelled',
+            default => ucfirst($this->status)
+        };
+    }
+
+    // Get status badge class
+    public function getStatusBadgeAttribute()
+    {
+        return match($this->status) {
+            'pending' => 'bg-warning',
+            'in_progress' => 'bg-info',
+            'completed' => 'bg-success',
+            'cancelled' => 'bg-danger',
+            default => 'bg-secondary'
         };
     }
 }
