@@ -20,16 +20,18 @@ A Laravel-based website for a company providing Security Guards, Cleaning Servic
 
 ## Technology Stack
 
-- **Backend**: Laravel (latest stable version)
+- **Backend**: Laravel 12.28.1
 - **Frontend**: Bootstrap 5 + Blade templates
-- **Database**: MySQL (configurable)
+- **Database**: MySQL (XAMPP)
 - **Authentication**: Laravel's built-in authentication
+- **PHP**: 8.2.12
 
 ## Installation & Setup
 
 ### Prerequisites
-- PHP 8.1 or higher
+- PHP 8.2 or higher
 - Composer
+- XAMPP (for MySQL database)
 - Node.js & NPM (optional, for asset compilation)
 
 ### Installation Steps
@@ -52,6 +54,8 @@ A Laravel-based website for a company providing Security Guards, Cleaning Servic
    ```
 
 4. **Database Setup**
+   - Start XAMPP (Apache + MySQL)
+   - Create database `homelock_db` in phpMyAdmin
    ```bash
    # Run migrations to create tables
    php artisan migrate
@@ -68,7 +72,7 @@ A Laravel-based website for a company providing Security Guards, Cleaning Servic
 6. **Access the application**
    - **Public Site**: http://localhost:8000
    - **Admin Panel**: http://localhost:8000/admin
-   - **Admin Login**: admin@homelock.com / password123
+   - **Admin Login**: admin@homelockservices.com / SecurePassword123!
 
 ## Database Structure
 
@@ -84,6 +88,7 @@ A Laravel-based website for a company providing Security Guards, Cleaning Servic
 - `service_type`: Type of service (security, cleaning, fire_extinguisher, contact)
 - `message`: Client message/requirements
 - `product_interest`: Specific product for fire extinguisher inquiries
+- `status`: Request status (pending, completed, etc.)
 - `created_at`, `updated_at`: Timestamps
 
 ## File Structure
